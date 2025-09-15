@@ -1,3 +1,5 @@
+// Navbar and Footer to wrap
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
