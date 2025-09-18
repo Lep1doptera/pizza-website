@@ -1,5 +1,5 @@
-// Menu page
-import ProductCard from '../components/product-card'
+import menu from '../components/food'
+import ProductCard from "../components/product-card";
 
 export default function MenuPage() {
   return (
