@@ -5,17 +5,20 @@ const menu = [
       { 
         name: "Lasagna", 
         description: "Layers of pasta with rich beef ragu, creamy béchamel, and melted cheese.", 
-        cost: 16.5 
+        cost: 16.5,
+        image: "/images/pasta.jpg"
       },
       { 
         name: "Spaghetti Bolognese", 
         description: "Classic spaghetti with slow-cooked beef and tomato sauce.", 
-        cost: 15 
+        cost: 15,
+        image: "/images/pasta.jpg"
       },
       { 
         name: "Chicken Parmigiana", 
         description: "Crispy crumbed chicken breast topped with Napoli sauce, ham, and melted mozzarella.", 
-        cost: 18 
+        cost: 18,
+        image: "/images/pasta.jpg"
       },
     ],
   },
@@ -29,6 +32,7 @@ const menu = [
           { size: "Small", cost: 10 },
           { size: "Large", cost: 18 }
         ],
+        image: "/images/pizza.jpg"
       },
       {
         name: "Pepperoni",
@@ -37,6 +41,7 @@ const menu = [
           { size: "Small", cost: 12 },
           { size: "Large", cost: 20 }
         ],
+        image: "/images/pizza.jpg"
       },
       {
         name: "Vegetarian",
@@ -45,6 +50,7 @@ const menu = [
           { size: "Small", cost: 11 },
           { size: "Large", cost: 19 }
         ],
+        image: "/images/pizza.jpg"
       },
       {
         name: "BBQ Chicken",
@@ -53,6 +59,7 @@ const menu = [
           { size: "Small", cost: 13 },
           { size: "Large", cost: 21 }
         ],
+        image: "/images/pizza.jpg"
       },
       {
         name: "Meat Lovers",
@@ -61,6 +68,7 @@ const menu = [
           { size: "Small", cost: 14 },
           { size: "Large", cost: 22 }
         ],
+        image: "/images/pizza.jpg"
       },
     ],
   },
