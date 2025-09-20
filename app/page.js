@@ -4,11 +4,8 @@ export default function Home() {
   return (
     <div>
       <main>
-        <h1>Test</h1>
+        <h1>Test for homepage</h1>
       </main>
-      <footer>
-        
-      </footer>
     </div>
   );
 }
