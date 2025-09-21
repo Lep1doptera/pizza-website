@@ -1,4 +1,5 @@
 export default function ProductCard({ name, description, cost, sizes, image }) {
+  console.log(name, cost, sizes);
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-md p-6">
       <img
@@ -6,12 +7,15 @@ export default function ProductCard({ name, description, cost, sizes, image }) {
         alt={name}
         className="w-full h-40 object-cover rounded-md mb-3"
       />
-      <h2>{name}</h2>
+      <h2 className="font-bold">{name}</h2>
       <p>{description}</p>
       {sizes ? (
         <div>
-          <p>Size:{JSON.stringify(sizes)}</p>
-          <p>${cost}</p>
+          {sizes.map((option, index) => (
+            <p key={index}>
+              {option.size} ${option.cost.toFixed(2)}
+            </p>
+          ))}
         </div>
       ) : (
         <div>
