@@ -7,21 +7,42 @@ const menu = [
         description:
           "Layers of pasta with rich beef ragu, creamy béchamel, and melted cheese.",
         cost: 16.5,
-        image: "/images/pasta.jpg"
+        image: "/images/pasta.jpg",
+        additions: [
+          {add: "Parmesan", cost: 4},
+          {add: "Ragu", cost: 5}
+        ]
       },
       {
         name: "Spaghetti Bolognese",
         description:
           "Classic spaghetti with slow-cooked beef and tomato sauce.",
         cost: 15,
-        image: "/images/pasta.jpg"
+        image: "/images/pasta.jpg",
+        additions: [
+          {add: "Parmesan", cost: 4},
+          {add: "Penne", cost: 2},
+          {add: "Gnocci", cost: 2},
+          {add: "sauce", cost: 5},
+          {add: "sauce", cost: 2}
+        ]
       },
       {
         name: "Chicken Parmigiana",
         description:
           "Crispy crumbed chicken breast topped with Napoli sauce, ham, and melted mozzarella.",
         cost: 18,
-        image: "/images/pasta.jpg"
+        image: "/images/pasta.jpg",
+        additions: [
+          {add: "Mozzarella", cost: 2},
+          {add: "Ham", cost: 3},
+          {add: "Napoli", cost: 2}
+        ],
+        remove: [
+          {withdraw: "Mozzarella"},
+          {withdraw: "Ham"},
+          {withdraw: "Napoli"}
+        ]
       },
     ],
   },
@@ -36,7 +57,20 @@ const menu = [
           { size: "Small", cost: 10 },
           { size: "Large", cost: 18 },
         ],
-        image: "/images/pizza.jpg"
+        image: "/images/pizza.jpg",
+        additions: [
+          {add: "Tomato Sauce", cost: 2},
+          {add: "Mozarella", cost: 3},
+          {add: "Basil", cost: 2},
+          {add: "Ham", cost: 5},
+          {add: "Pepperoni", cost: 4},
+          {add: "Pineapple", cost: 4}
+        ],
+        remove: [
+          {withdraw: "Mozzarella"},
+          {withdraw: "Tomato Sauce"},
+          {withdraw: "Basil"}
+        ]
       },
       {
         name: "Pepperoni",
@@ -46,7 +80,20 @@ const menu = [
           { size: "Small", cost: 12 },
           { size: "Large", cost: 20 },
         ],
-        image: "/images/pizza.jpg"
+        image: "/images/pizza.jpg",
+        additions: [
+          {add: "Tomato Sauce", cost: 2},
+          {add: "Mozarella", cost: 3},
+          {add: "Basil", cost: 2},
+          {add: "Ham", cost: 5},
+          {add: "Pepperoni", cost: 4},
+          {add: "Pineapple", cost: 4}
+        ],
+        remove: [
+          {withdraw: "Mozzarella"},
+          {withdraw: "Tomato Sauce"},
+          {withdraw: "Pepperoni"}
+        ]
       },
       {
         name: "Vegetarian",
@@ -56,7 +103,27 @@ const menu = [
           { size: "Small", cost: 11 },
           { size: "Large", cost: 19 },
         ],
-        image: "/images/pizza.jpg"
+        image: "/images/pizza.jpg",
+        additions: [
+          {add: "Tomato Sauce", cost: 2},
+          {add: "Mozarella", cost: 3},
+          {add: "Basil", cost: 2},
+          {add: "Ham", cost: 5},
+          {add: "Pepperoni", cost: 4},
+          {add: "Pineapple", cost: 4},
+          {add: "Mushroom", cost: 4},
+          {add: "Capsicum", cost: 2},
+          {add: "Olives", cost: 4},
+          {add: "Onion", cost: 2}
+        ],
+        remove: [
+          {withdraw: "Mozzarella"},
+          {withdraw: "Tomato Sauce"},
+          {withdraw: "Mushrooms"},
+          {withdraw: "Capsicum"},
+          {withdraw: "Olives"},
+          {withdraw: "Onion"}
+        ]
       },
       {
         name: "BBQ Chicken",
@@ -66,7 +133,29 @@ const menu = [
           { size: "Small", cost: 13 },
           { size: "Large", cost: 21 },
         ],
-        image: "/images/pizza.jpg"
+        image: "/images/pizza.jpg",
+        additions: [
+          {add: "Tomato Sauce", cost: 2},
+          {add: "Mozarella", cost: 3},
+          {add: "Basil", cost: 2},
+          {add: "Ham", cost: 5},
+          {add: "Pepperoni", cost: 4},
+          {add: "Pineapple", cost: 4},
+          {add: "Mushroom", cost: 4},
+          {add: "Capsicum", cost: 2},
+          {add: "Olives", cost: 4},
+          {add: "Onion", cost: 2},
+          {add: "Grilled Chicken", cost: 6},
+          {add: "Red Onion", cost: 2},
+          {add: "BBQ Sauce", cost: 2}
+        ],
+        remove: [
+          {withdraw: "Mozzarella"},
+          {withdraw: "BBQ Sauce"},
+          {withdraw: "Grilled Chicken"},
+          {withdraw: "Red Onions"},
+          {withdraw: "Capsicum"}
+        ]
       },
       {
         name: "Meat Lovers",
@@ -76,7 +165,30 @@ const menu = [
           { size: "Small", cost: 14 },
           { size: "Large", cost: 22 },
         ],
-        image: "/images/pizza.jpg"
+        image: "/images/pizza.jpg",
+        additions: [
+          {add: "Tomato Sauce", cost: 2},
+          {add: "Mozarella", cost: 3},
+          {add: "Basil", cost: 2},
+          {add: "Ham", cost: 5},
+          {add: "Pepperoni", cost: 4},
+          {add: "Pineapple", cost: 4},
+          {add: "Mushroom", cost: 4},
+          {add: "Capsicum", cost: 2},
+          {add: "Olives", cost: 4},
+          {add: "Onion", cost: 2},
+          {add: "Grilled Chicken", cost: 6},
+          {add: "Red Onion", cost: 2},
+          {add: "BBQ Sauce", cost: 2}
+        ],
+        remove: [
+          {withdraw: "Mozzarella"},
+          {withdraw: "Tomato Sauce"},
+          {withdraw: "Pepperoni"},
+          {withdraw: "Ham"},
+          {withdraw: "Bacon"},
+          {withdraw: "Beef"}
+        ]
       },
     ],
   },
@@ -130,6 +242,27 @@ const menu = [
       },
     ],
   },
+{
+    category: "drinks",
+    items: [
+      {
+        name: "Coca Cola 1.25L", cost: 5,
+        image: ""
+      },
+      {
+        name: "Sprite 1.25L", cost: 5,
+        image: ""
+      },
+      {
+        name: "Fanta 1.25L", cost: 5,
+        image: ""
+      },
+      {
+        name: "Water 600ml", cost: 3.50,
+        image: ""
+      }
+    ],
+  },
   {
     category: "specials",
     items: [
@@ -138,13 +271,23 @@ const menu = [
         description:
           "2 Large Pizzas, 2 Sides, and a 1.25L Drink — perfect for sharing.",
         cost: 45,
-        image: "/images/special.jpg"
+        image: "/images/special.jpg",
+        includes: {
+          pizza: { count: 2, size: "Large"},
+          sides: 2,
+          drinks: 1
+        }
       },
       {
         name: "Couples Deal",
-        description: "1 Medium Pizza, 1 Side, and a Dessert — great for two.",
+        description: "1 large Pizza, 1 Side, and a Dessert — great for two.",
         cost: 30,
-        image: "/images/special.jpg"
+        image: "/images/special.jpg",
+        includes: {
+          pizza: { count: 1, size: "Large"},
+          sides: 1,
+          dessert: 1
+        }
       },
     ],
   },
