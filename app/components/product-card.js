@@ -1,5 +1,4 @@
 export default function ProductCard({ name, description, cost, sizes, image }) {
-  console.log(name, cost, sizes);
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-md p-6">
       <img
