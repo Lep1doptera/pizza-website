@@ -10,7 +10,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -26,19 +25,18 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-
-
 ## Tools included
-* Node and NPM 
-* JavaScript
-* React.js
-* Next.js
-* Express.js
-* TailwindCSS
 
+- Node and NPM
+- JavaScript
+- React.js
+- Next.js
+- Express.js
+- TailwindCSS
 
-## Tools to add later
-* Typescript
-* MongoDB or PostgreSQL
-* Auth0
-* Stripe
+## Tools to name later
+
+- Typescript
+- MongoDB or PostgreSQL
+- Auth0
+- Stripe
