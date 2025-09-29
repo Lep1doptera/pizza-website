@@ -1,4 +1,12 @@
-export default function ProductCard({ name, description, cost, sizes, image }) {
+import { MenuItem, SizeOption } from "../components/food";
+
+export default function ProductCard({
+  name,
+  description,
+  cost,
+  sizes,
+  image,
+}: MenuItem) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-md p-6">
       <img
@@ -10,7 +18,7 @@ export default function ProductCard({ name, description, cost, sizes, image }) {
       <p>{description}</p>
       {sizes ? (
         <div>
-          {sizes.map((option, index) => (
+          {sizes.map((option: SizeOption, index: number) => (
             <p key={index}>
               {option.size} ${option.cost.toFixed(2)}
             </p>

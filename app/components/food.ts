@@ -1,9 +1,9 @@
-interface Category {
+export interface Category {
   category: string;
   items: MenuItem[];
 }
 
-interface MenuItem {
+export interface MenuItem {
   name: string;
   description?: string;
   cost?: number;
@@ -14,22 +14,22 @@ interface MenuItem {
   includes?: Includes;
 }
 
-interface Addition {
+export interface Addition {
   name: string;
   cost: number;
 }
 
-interface Removal {
+export interface Removal {
   name: string;
   cost: number;
 }
 
-interface SizeOption {
+export interface SizeOption {
   size: string;
   cost: number;
 }
 
-interface Includes {
+export interface Includes {
   pizza?: { count: number; size: string };
   sides?: number;
   drinks?: number;
