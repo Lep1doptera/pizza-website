@@ -1,8 +1,43 @@
+interface Category {
+  category: string;
+  items: MenuItem[];
+}
+
+interface MenuItem {
+  name: string;
+  description?: string;
+  cost?: number;
+  image: string;
+  additions?: Addition[];
+  remove?: Removal[];
+  sizes?: SizeOption[];
+  includes?: Includes;
+}
+
+interface Addition {
+  name: string;
+  cost: number;
+}
+
+interface Removal {
+  name: string;
+  cost: number;
+}
+
+interface SizeOption {
+  size: string;
+  cost: number;
+}
+
+interface Includes {
+  pizza?: { count: number; size: string };
+  sides?: number;
+  drinks?: number;
+  dessert?: number;
+}
 
 
-
-
-const menu = [
+const menu: Category[] = [
   {
     category: "mains",
     items: [
