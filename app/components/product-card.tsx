@@ -1,4 +1,4 @@
-import { MenuItem, SizeOption } from "../components/food";
+import { MenuItem } from "../components/food";
 
 export default function ProductCard({
   name,
