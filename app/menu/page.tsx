@@ -1,12 +1,22 @@
-import menu from "../components/food";
+import menu, { Category, MenuItem } from "../components/food";
 import ProductCard from "../components/product-card";
 
 export default function MenuPage() {
-  const mains = menu.find((category) => category.category === "mains");
-  const pizza = menu.find((category) => category.category === "pizza");
-  const dessert = menu.find((category) => category.category === "dessert");
-  const sides = menu.find((category) => category.category === "sides");
-  const deals = menu.find((category) => category.category === "specials");
+  const mains = menu.find(
+    (category) => category.category === "mains"
+  );
+  const pizza = menu.find(
+    (category) => category.category === "pizza"
+  );
+  const dessert = menu.find(
+    (category) => category.category === "dessert"
+  );
+  const sides = menu.find(
+    (category) => category.category === "sides"
+  );
+  const deals = menu.find(
+    (category) => category.category === "specials"
+  );
   return (
     <div>
       <div className="relative w-full h-30 flex items-center justify-center text-white text-2xl font-bold bg-blue-900">

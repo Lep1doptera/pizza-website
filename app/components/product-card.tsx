@@ -1,4 +1,12 @@
-export default function ProductCard({ name, description, cost, sizes, image }) {
+import { MenuItem } from "../components/food";
+
+export default function ProductCard({
+  name,
+  description,
+  cost,
+  sizes,
+  image,
+}: MenuItem) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-md p-6">
       <img

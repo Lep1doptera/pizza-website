@@ -1,12 +1,16 @@
 import "./globals.css";
-import Navbar from './components/navbar'
-import Footer from './components/footer'
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 export const metadata = {
   title: "Pizzalicious",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
