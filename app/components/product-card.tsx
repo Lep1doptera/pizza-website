@@ -18,7 +18,7 @@ export default function ProductCard({
       <p>{description}</p>
       {sizes ? (
         <div>
-          {sizes.map((option: SizeOption, index: number) => (
+          {sizes.map((option, index) => (
             <p key={index}>
               {option.size} ${option.cost.toFixed(2)}
             </p>

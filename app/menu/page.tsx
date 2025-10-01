@@ -2,19 +2,19 @@ import menu, { Category, MenuItem } from "../components/food";
 import ProductCard from "../components/product-card";
 
 export default function MenuPage() {
-  const mains: Category = menu.find(
+  const mains = menu.find(
     (category) => category.category === "mains"
   );
-  const pizza: Category = menu.find(
+  const pizza = menu.find(
     (category) => category.category === "pizza"
   );
-  const dessert: Category = menu.find(
+  const dessert = menu.find(
     (category) => category.category === "dessert"
   );
-  const sides: Category = menu.find(
+  const sides = menu.find(
     (category) => category.category === "sides"
   );
-  const deals: Category = menu.find(
+  const deals = menu.find(
     (category) => category.category === "specials"
   );
   return (
@@ -25,7 +25,7 @@ export default function MenuPage() {
 
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6">
-          {mains.items.map((item: MenuItem, index: number) => (
+          {mains.items.map((item, index) => (
             <ProductCard
               key={index}
               name={item.name}
@@ -43,7 +43,7 @@ export default function MenuPage() {
 
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6">
-          {pizza.items.map((item: MenuItem, index: number) => (
+          {pizza.items.map((item, index) => (
             <ProductCard
               key={index}
               name={item.name}
@@ -62,7 +62,7 @@ export default function MenuPage() {
 
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6">
-          {dessert.items.map((item: MenuItem, index: number) => (
+          {dessert.items.map((item, index) => (
             <ProductCard
               key={index}
               name={item.name}
@@ -80,7 +80,7 @@ export default function MenuPage() {
 
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6">
-          {sides.items.map((item: MenuItem, index: number) => (
+          {sides.items.map((item, index) => (
             <ProductCard
               key={index}
               name={item.name}
@@ -98,7 +98,7 @@ export default function MenuPage() {
 
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6">
-          {deals.items.map((item: MenuItem, index: number) => (
+          {deals.items.map((item, index) => (
             <ProductCard
               key={index}
               name={item.name}
