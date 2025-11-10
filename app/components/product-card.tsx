@@ -46,6 +46,11 @@ export default function ProductCard({
       </div>
       {showModal && (
         <Modal
+          name={name}
+          description={description}
+          cost={cost}
+          sizes={sizes}
+          image={image}
           close={() => {
             setShowModal(false);
           }}
