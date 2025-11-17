@@ -1,7 +1,12 @@
 "use client";
 import { useState } from "react";
 import { MenuItem } from "../components/food";
-import Modal from "./menu-modal";
+import Modal from "./menu-sizes-modal";
+import Modal_single from "./menu-single-modal";
+
+type ProductCardProps = MenuItem & {
+  onSubmit: (newItem: {name: string, count: number, cost: number, size?: string}) => void;
+};
 
 export default function ProductCard({
   name,
@@ -9,9 +14,19 @@ export default function ProductCard({
   cost,
   sizes,
   image,
-}: MenuItem) {
+  onSubmit
+}: ProductCardProps) {
   const [showModal, setShowModal] = useState(false);
 
+  const onSingleAdd = (name:string, count:number, cost:number) => {
+    const newItem = {name, count, cost}
+    onSubmit(newItem)
+  }
+
+  const onSizeAdd = (name:string, count:number, cost:number, size: string) => (
+    const newItem = {name, count, cost, size}
+    onSubmit(newItem)
+  )
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-md p-6">
       <img
@@ -44,18 +59,31 @@ export default function ProductCard({
           Order
         </button>
       </div>
-      {showModal && (
-        <Modal
-          name={name}
-          description={description}
-          cost={cost}
-          sizes={sizes}
-          image={image}
-          close={() => {
-            setShowModal(false);
-          }}
-        />
-      )}
+      {showModal &&
+        (sizes ? (
+          <Modal
+            name={name}
+            description={description}
+            cost={cost}
+            sizes={sizes}
+            image={image}
+            onSubmit={onSizeAdd}
+            close={() => {
+              setShowModal(false);
+            }}
+          />
+        ) : (
+          <Modal_single
+            name={name}
+            description={description}
+            cost={cost}
+            image={image}
+            onSubmit={onSingleAdd}
+            close={() => {
+              setShowModal(false);
+            }}
+          />
+        ))}
     </div>
   );
 }
