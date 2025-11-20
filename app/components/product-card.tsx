@@ -5,7 +5,14 @@ import Modal from "./menu-sizes-modal";
 import Modal_single from "./menu-single-modal";
 
 type ProductCardProps = MenuItem & {
-  onSubmit: (newItem: {name: string, count: number, cost: number, size?: string}) => void;
+  onSubmit: (
+    newItem: {
+      name: string;
+      count: number;
+      cost: number;
+      size?: string;
+    }[]
+  ) => void;
 };
 
 export default function ProductCard({
@@ -14,19 +21,21 @@ export default function ProductCard({
   cost,
   sizes,
   image,
-  onSubmit
+  onSubmit,
 }: ProductCardProps) {
   const [showModal, setShowModal] = useState(false);
 
-  const onSingleAdd = (name:string, count:number, cost:number) => {
-    const newItem = {name, count, cost}
-    onSubmit(newItem)
-  }
+  const onSingleAdd = (name: string, count: number, cost: number) => {
+    const newItem = { name, count, cost };
+    onSubmit([newItem]);
+  };
 
-  const onSizeAdd = (name:string, count:number, cost:number, size: string) => (
-    const newItem = {name, count, cost, size}
-    onSubmit(newItem)
-  )
+  const onSizeAdd = (
+    newItems: { name: string; count: number; cost: number; size: string }[]
+  ) => {
+    onSubmit(newItems);
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-md p-6">
       <img

@@ -1,17 +1,20 @@
 import { MenuItem } from "./food";
 import { useState } from "react";
+import { FormEvent } from "react";
+
+type OrderItem = { name: string; count: number; cost: number; size: string };
 
 type MenuModalProps = MenuItem & {
   close: () => void;
-  onSubmit: (name: string, count: number, cost: number, size: string) => void;
+  onSubmit: (eachSizeItem: OrderItem[]) => void;
 };
 export default function Modal({
   close,
   name,
   description,
-  cost,
   sizes = [],
   image,
+  onSubmit,
 }: MenuModalProps) {
   const myNewCounts = sizes.reduce((accumulator, value) => {
     accumulator[value.size] = 0;
@@ -32,9 +35,31 @@ export default function Modal({
     setCount(newCount);
   }
 
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const eachSizeItem = [];
+
+    for (const orderInfo in count) {
+      const foundSize = sizes.find((value) => value.size === orderInfo);
+      const itemCost = foundSize.cost;
+      const order: OrderItem = {
+        count: count[orderInfo],
+        name,
+        cost: itemCost,
+        size: orderInfo,
+      };
+
+      eachSizeItem.push(order);
+    }
+
+    onSubmit(eachSizeItem);
+
+    close();
+  }
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-      <form>
+      <form onSubmit={(event) => handleSubmit(event)}>
         <div className="bg-white p-10 rounded-lg shadow-lg w-200 w-full text-center">
           <h2 className="font-bold">{name}</h2>
           <p>{description}</p>
@@ -50,6 +75,7 @@ export default function Modal({
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
+                    aria-label={"negative " + option.size}
                     className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
                     onClick={() => getSizeMinusCount(option)}
                     disabled={count[option.size] === 0}
@@ -60,6 +86,7 @@ export default function Modal({
                   <span>{count[option.size]}</span>
                   <button
                     type="button"
+                    aria-label={"plus " + option.size}
                     className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
                     onClick={() => getSizeAddCount(option)}
                   >

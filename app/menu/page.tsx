@@ -1,20 +1,20 @@
 "use client";
 import menu, { Category, MenuItem } from "../components/food";
 import ProductCard from "../components/product-card";
-import {useState} from "react";
+import { useState } from "react";
 
 type CartItem = { name: string; cost: number; count: number; size?: string };
 type Cart = CartItem[];
 
 export default function MenuPage() {
+  const [cart, setCart] = useState<Cart>([]);
 
-  const [cart, setCart] = useState([]);
-
-  function onAdd(newItem: CartItem) {
-    setCart([...cart, newItem]) 
+  function onAdd(newItems: CartItem[]) {
+    const newCart = [...cart, ...newItems];
+    setCart(newCart);
   }
 
-  console.log(cart)
+  console.log(cart);
 
   const mains = menu.find((category) => category.category === "mains");
   const pizza = menu.find((category) => category.category === "pizza");
@@ -56,6 +56,7 @@ export default function MenuPage() {
               sizes={item.sizes}
               cost={item.cost}
               image={item.image}
+              onSubmit={onAdd}
             />
           ))}
         </div>
@@ -74,6 +75,7 @@ export default function MenuPage() {
               description={item.description}
               cost={item.cost}
               image={item.image}
+              onSubmit={onAdd}
             />
           ))}
         </div>
@@ -92,6 +94,7 @@ export default function MenuPage() {
               description={item.description}
               cost={item.cost}
               image={item.image}
+              onSubmit={onAdd}
             />
           ))}
         </div>
@@ -110,6 +113,7 @@ export default function MenuPage() {
               description={item.description}
               cost={item.cost}
               image={item.image}
+              onSubmit={onAdd}
             />
           ))}
         </div>
