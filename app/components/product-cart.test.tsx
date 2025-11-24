@@ -88,15 +88,15 @@ describe("Product card", () => {
 
     await fireEvent.click(await screen.findByText("Order"));
 
-    await fireEvent.click(await screen.getByLabelText("plus Small"));
-    await fireEvent.click(await screen.getByLabelText("plus Small"));
+    await fireEvent.click(await screen.getByLabelText("increase small"));
+    await fireEvent.click(await screen.getByLabelText("increase small"));
 
-    await fireEvent.click(await screen.getByLabelText("plus Small"));
+    await fireEvent.click(await screen.getByLabelText("increase small"));
 
-    await fireEvent.click(await screen.getByLabelText("negative Small"));
-    await fireEvent.click(await screen.getByLabelText("plus Large"));
-    await fireEvent.click(await screen.getByLabelText("plus Large"));
-    await fireEvent.click(await screen.getByLabelText("plus Large"));
+    await fireEvent.click(await screen.getByLabelText("decrease Small"));
+    await fireEvent.click(await screen.getByLabelText("increase Large"));
+    await fireEvent.click(await screen.getByLabelText("increase Large"));
+    await fireEvent.click(await screen.getByLabelText("increase Large"));
 
     await fireEvent.click(await screen.getByText("Add to Cart"));
 

@@ -75,7 +75,7 @@ export default function Modal({
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
-                    aria-label={"negative " + option.size}
+                    aria-label={"decrease" + option.size}
                     className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
                     onClick={() => getSizeMinusCount(option)}
                     disabled={count[option.size] === 0}
@@ -86,7 +86,7 @@ export default function Modal({
                   <span>{count[option.size]}</span>
                   <button
                     type="button"
-                    aria-label={"plus " + option.size}
+                    aria-label={"increase " + option.size}
                     className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
                     onClick={() => getSizeAddCount(option)}
                   >
