@@ -19,6 +19,9 @@ export default function Navbar() {
         <li>
           <a href="#">Login</a>
         </li>
+        <li>
+          <Link href="/cart">Checkout</Link>
+        </li>
       </ul>
     </nav>
   );
